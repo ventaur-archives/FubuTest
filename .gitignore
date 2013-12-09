@@ -1,0 +1,10 @@
+*.user
+*.suo
+bin/*
+obj/*
+packages/**/*
+logs/
+Source/bin/
+Source/fubu-content/
+Source/obj/
+Source/packages/

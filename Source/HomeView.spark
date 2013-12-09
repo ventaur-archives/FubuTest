@@ -1,0 +1,57 @@
+﻿<viewdata model="FubuTest.HomeViewModel" />
+
+<html ng-app="app">
+<head>
+	<title>Test</title>
+</head>
+<body ng-controller="TestController">
+	<h1>JSON POST Test</h1>
+	<form>
+		<input type="text" ng-model="name" />
+		<input type="submit" ng-click="testPost(false, true)" value="JSON - NO Binding" />
+		<input type="submit" ng-click="testPost(true, true)" value="JSON - WITH Binding" />
+		<input type="submit" ng-click="testPost(true, false)" value="Form - WITH Binding" />
+	</form>
+	<p>{{message}}</p>
+	<p>Username from custom binder is: {{username}}.</p>
+
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+	<script>
+		(function (angular, $, undefined) {
+			var app = angular.module('app', []);
+			
+			app.controller('TestController', function ($scope, $http) {
+				$scope.name = 'Jeremy and Josh';
+				
+				$scope.testPost = function (useActionWithBinding, useJson) {
+					$scope.message = 'POSTing now...';
+				
+					var url = (useActionWithBinding ? '/jsonpost/withbinding' : '/jsonpost/nobinding');
+					var config = {
+						headers: { 'Content-Type': (useJson ? 'application/json' : 'application/x-www-form-urlencoded') }
+					};
+					var data = {
+						Name: $scope.name
+					};
+					
+					if (!useJson) {
+						data = $.param(data);
+					}
+					
+					$http.post(url, data, config)
+						.success(function (responseData) {
+							$scope.message = (responseData.success ? 'Success. ' : 'Sort of worked. ') + responseData.message;
+							$scope.username = (responseData.Username ? responseData.Username : 'nada');
+						})
+						.error(function () {
+							$scope.message = 'Failed.';
+							$scope.username = 'n/a';
+						});
+				}
+			});
+		}(angular, jQuery));
+	</script>
+</body>
+</html>
