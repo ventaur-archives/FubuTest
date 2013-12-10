@@ -46,6 +46,9 @@
     <Reference Include="FubuCore">
       <HintPath>packages\FubuCore\lib\FubuCore.dll</HintPath>
     </Reference>
+    <Reference Include="FubuJson">
+      <HintPath>packages\FubuJson\lib\net40\FubuJson.dll</HintPath>
+    </Reference>
     <Reference Include="FubuLocalization">
       <HintPath>packages\FubuLocalization\lib\FubuLocalization.dll</HintPath>
     </Reference>
@@ -67,6 +70,12 @@
     <Reference Include="FubuMVC.JQueryUI">
       <HintPath>packages\FubuMVC.JQueryUI\lib\net40\FubuMVC.JQueryUI.dll</HintPath>
     </Reference>
+    <Reference Include="FubuMVC.Json">
+      <HintPath>packages\FubuMVC.Json\lib\net40\FubuMVC.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.Media">
+      <HintPath>packages\FubuMVC.Media\lib\net40\FubuMVC.Media.dll</HintPath>
+    </Reference>
     <Reference Include="FubuMVC.Navigation">
       <HintPath>packages\FubuMVC.Navigation\lib\net40\FubuMVC.Navigation.dll</HintPath>
     </Reference>
@@ -84,6 +93,9 @@
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\FubuMVC.0.9.9.56\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Spark">
       <HintPath>packages\Spark\lib\NET45\Spark.dll</HintPath>
